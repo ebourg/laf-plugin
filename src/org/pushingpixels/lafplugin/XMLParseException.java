@@ -37,7 +37,7 @@ package org.pushingpixels.lafplugin;
  * $Revision: 39 $<BR>
  * $Date: 2009-10-14 19:49:29 -0700 (Wed, 14 Oct 2009) $<P>
  *
- * @see nanoxml.XMLElement
+ * @see XMLElement
  *
  * @author Marc De Scheemaecker
  * @version $Name$, $Revision: 39 $
@@ -119,7 +119,7 @@ class XMLParseException extends RuntimeException
      * Where the error occurred, or <code>NO_LINE</code> if the line number is
      * unknown.
      *
-     * @see nanoxml.XMLParseException#NO_LINE
+     * @see XMLParseException#NO_LINE
      */
     public int getLineNr()
     {
