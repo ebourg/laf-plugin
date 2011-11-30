@@ -588,24 +588,6 @@ class XMLElement
      * @param value
      *     The value of the attribute.
      *
-     * @deprecated Use {@link #setAttribute(java.lang.String, java.lang.Object)
-     *             setAttribute} instead.
-     */
-    public void addProperty(String name,
-                            Object value)
-    {
-        this.setAttribute(name, value);
-    }
-
-
-    /**
-     * Adds or modifies an attribute.
-     *
-     * @param name
-     *     The name of the attribute.
-     * @param value
-     *     The value of the attribute.
-     *
      * </dl><dl><dt><b>Preconditions:</b></dt><dd>
      * <ul><li><code>name != null</code>
      *     <li><code>name</code> is a valid XML identifier
@@ -640,24 +622,6 @@ class XMLElement
             name = name.toUpperCase();
         }
         this.attributes.put(name, Integer.toString(value));
-    }
-
-
-    /**
-     * Adds or modifies an attribute.
-     *
-     * @param key
-     *     The name of the attribute.
-     * @param value
-     *     The value of the attribute.
-     *
-     * @deprecated Use {@link #setIntAttribute(java.lang.String, int)
-     *             setIntAttribute} instead.
-     */
-    public void addProperty(String key,
-                            int    value)
-    {
-        this.setIntAttribute(key, value);
     }
 
 
@@ -703,24 +667,6 @@ class XMLElement
             name = name.toUpperCase();
         }
         this.attributes.put(name, Double.toString(value));
-    }
-
-
-    /**
-     * Adds or modifies an attribute.
-     *
-     * @param name
-     *     The name of the attribute.
-     * @param value
-     *     The value of the attribute.
-     *
-     * @deprecated Use {@link #setDoubleAttribute(java.lang.String, double)
-     *             setDoubleAttribute} instead.
-     */
-    public void addProperty(String name,
-                            double value)
-    {
-        this.setDoubleAttribute(name, value);
     }
 
 
@@ -804,18 +750,6 @@ class XMLElement
 
 
     /**
-     * Enumerates the attribute names.
-     *
-     * @deprecated Use {@link #enumerateAttributeNames()
-     *             enumerateAttributeNames} instead.
-     */
-    public Enumeration enumeratePropertyNames()
-    {
-        return this.enumerateAttributeNames();
-    }
-
-
-    /**
      * Enumerates the child elements.
      *
      * <dl><dt><b>Postconditions:</b></dt><dd>
@@ -859,18 +793,6 @@ class XMLElement
             // braindead that they require this exception clause
             return null;
         }
-    }
-
-
-    /**
-     * Returns the PCDATA content of the object. If there is no such content,
-     * <CODE>null</CODE> is returned.
-     *
-     * @deprecated Use {@link #getContent() getContent} instead.
-     */
-    public String getContents()
-    {
-        return this.getContent();
     }
 
 
@@ -1465,149 +1387,6 @@ class XMLElement
 
 
     /**
-     * Returns an attribute by looking up a key in a hashtable.
-     *
-     * @deprecated Use {@link #getIntAttribute(java.lang.String,
-     *             java.util.Hashtable, java.lang.String, boolean)
-     *             getIntAttribute} instead.
-     */
-    public int getIntProperty(String    name,
-                              Hashtable valueSet,
-                              String    defaultKey)
-    {
-        return this.getIntAttribute(name, valueSet, defaultKey, false);
-    }
-
-
-    /**
-     * Returns an attribute.
-     *
-     * @deprecated Use {@link #getStringAttribute(java.lang.String)
-     *             getStringAttribute} instead.
-     */
-    public String getProperty(String name)
-    {
-        return this.getStringAttribute(name);
-    }
-
-
-    /**
-     * Returns an attribute.
-     *
-     * @deprecated Use {@link #getStringAttribute(java.lang.String,
-     *             java.lang.String) getStringAttribute} instead.
-     */
-    public String getProperty(String name,
-                              String defaultValue)
-    {
-        return this.getStringAttribute(name, defaultValue);
-    }
-
-
-    /**
-     * Returns an attribute.
-     *
-     * @deprecated Use {@link #getIntAttribute(java.lang.String, int)
-     *             getIntAttribute} instead.
-     */
-    public int getProperty(String name,
-                           int    defaultValue)
-    {
-        return this.getIntAttribute(name, defaultValue);
-    }
-
-
-    /**
-     * Returns an attribute.
-     *
-     * @deprecated Use {@link #getDoubleAttribute(java.lang.String, double)
-     *             getDoubleAttribute} instead.
-     */
-    public double getProperty(String name,
-                              double defaultValue)
-    {
-        return this.getDoubleAttribute(name, defaultValue);
-    }
-
-
-    /**
-     * Returns an attribute.
-     *
-     * @deprecated Use {@link #getBooleanAttribute(java.lang.String,
-     *             java.lang.String, java.lang.String, boolean)
-     *             getBooleanAttribute} instead.
-     */
-    public boolean getProperty(String  key,
-                               String  trueValue,
-                               String  falseValue,
-                               boolean defaultValue)
-    {
-        return this.getBooleanAttribute(key, trueValue, falseValue,
-                                        defaultValue);
-    }
-
-
-    /**
-     * Returns an attribute by looking up a key in a hashtable.
-     *
-     * @deprecated Use {@link #getAttribute(java.lang.String,
-     *             java.util.Hashtable, java.lang.String, boolean)
-     *             getAttribute} instead.
-     */
-    public Object getProperty(String    name,
-                              Hashtable valueSet,
-                              String    defaultKey)
-    {
-        return this.getAttribute(name, valueSet, defaultKey, false);
-    }
-
-
-    /**
-     * Returns an attribute by looking up a key in a hashtable.
-     *
-     * @deprecated Use {@link #getStringAttribute(java.lang.String,
-     *             java.util.Hashtable, java.lang.String, boolean)
-     *             getStringAttribute} instead.
-     */
-    public String getStringProperty(String    name,
-                                    Hashtable valueSet,
-                                    String    defaultKey)
-    {
-        return this.getStringAttribute(name, valueSet, defaultKey, false);
-    }
-
-
-    /**
-     * Returns an attribute by looking up a key in a hashtable.
-     *
-     * @deprecated Use {@link #getIntAttribute(java.lang.String,
-     *             java.util.Hashtable, java.lang.String, boolean)
-     *             getIntAttribute} instead.
-     */
-    public int getSpecialIntProperty(String    name,
-                                     Hashtable valueSet,
-                                     String    defaultKey)
-    {
-        return this.getIntAttribute(name, valueSet, defaultKey, true);
-    }
-
-
-    /**
-     * Returns an attribute by looking up a key in a hashtable.
-     *
-     * @deprecated Use {@link #getDoubleAttribute(java.lang.String,
-     *             java.util.Hashtable, java.lang.String, boolean)
-     *             getDoubleAttribute} instead.
-     */
-    public double getSpecialDoubleProperty(String    name,
-                                           Hashtable valueSet,
-                                           String    defaultKey)
-    {
-        return this.getDoubleAttribute(name, valueSet, defaultKey, true);
-    }
-
-
-    /**
      * Returns the name of the element.
      *
      * @see XMLElement#setName(java.lang.String) setName(String)
@@ -1615,17 +1394,6 @@ class XMLElement
     public String getName()
     {
         return this.name;
-    }
-
-
-    /**
-     * Returns the name of the element.
-     *
-     * @deprecated Use {@link #getName() getName} instead.
-     */
-    public String getTagName()
-    {
-        return this.getName();
     }
 
 
@@ -2034,36 +1802,6 @@ class XMLElement
 
 
     /**
-     * Removes an attribute.
-     *
-     * @param name
-     *     The name of the attribute.
-     *
-     * @deprecated Use {@link #removeAttribute(java.lang.String)
-     *             removeAttribute} instead.
-     */
-    public void removeProperty(String name)
-    {
-        this.removeAttribute(name);
-    }
-
-
-    /**
-     * Removes an attribute.
-     *
-     * @param name
-     *     The name of the attribute.
-     *
-     * @deprecated Use {@link #removeAttribute(java.lang.String)
-     *             removeAttribute} instead.
-     */
-    public void removeChild(String name)
-    {
-        this.removeAttribute(name);
-    }
-
-
-    /**
      * Creates a new similar XML element.
      * <P>
      * You should override this method when subclassing XMLElement.
@@ -2086,20 +1824,6 @@ class XMLElement
     public void setContent(String content)
     {
         this.contents = content;
-    }
-
-
-    /**
-     * Changes the name of the element.
-     *
-     * @param name
-     *     The new name.
-     *
-     * @deprecated Use {@link #setName(java.lang.String) setName} instead.
-     */
-    public void setTagName(String name)
-    {
-        this.setName(name);
     }
 
 
